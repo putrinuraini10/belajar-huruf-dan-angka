@@ -1,19 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:background="#FFF8DC"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
 
     <TextView
+        android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Belajar Huruf dan Angka"
+        android:textSize="28sp"
+        android:textColor="#FF6347"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="32dp">
+
+        <Button
+            android:id="@+id/btnHuruf"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="🅰️ Huruf"
+            android:textSize="18sp"
+            android:backgroundTint="#FFCC80" />
+
+        <Space android:layout_width="12dp" android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnAngka"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="🔢 Angka"
+            android:textSize="18sp"
+            android:backgroundTint="#81D4FA" />
+
+        <Space android:layout_width="12dp" android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnWarna"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="🎨 Warna"
+            android:textSize="18sp"
+            android:backgroundTint="#AED581" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageIllustration"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/ilustrasi_anak"
+        android:contentDescription="Ilustrasi Anak"
+        android:layout_gravity="center" />
+</LinearLayout>
