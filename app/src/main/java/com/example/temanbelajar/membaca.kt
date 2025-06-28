@@ -36,11 +36,6 @@ class membaca : AppCompatActivity() {
             playAudio(R.raw.mengeja)
         }
 
-        infoIcon.setOnClickListener {
-            val intent = Intent(this, tentangkami::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-        }
     }
 
     private fun playAudio(audioResId: Int) {
