@@ -10,6 +10,7 @@ import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainerView
+import androidx.appcompat.app.AlertDialog
 
 class membaca : AppCompatActivity() {
 
@@ -33,9 +34,12 @@ class membaca : AppCompatActivity() {
         }
 
         btnMengeja.setOnClickListener {
-            playAudio(R.raw.mengeja)
+            playAudioAndNavigate(R.raw.mengeja, Mengeja1Fragment())
         }
 
+        infoIcon.setOnClickListener {
+            showAboutUsPopup()
+        }
     }
 
     private fun playAudio(audioResId: Int) {
@@ -68,6 +72,25 @@ class membaca : AppCompatActivity() {
             .replace(R.id.fragment_container_membaca, fragment)
             .addToBackStack(null)
             .commit()
+    }
+
+    private fun showAboutUsPopup() {
+        val title = "Tentang kami"
+        val message = """
+            Aplikasi ini merupakan aplikasi edukasi untuk anak-anak yang bertujuan membantu belajar mengeja, mengenal huruf abjad, angka, warna, dan bernyanyi sambil belajar.
+
+            Dibuat oleh:
+            Putri Nuraini
+            Hikmatun Nazilah
+            Clara Putri Andini
+        """.trimIndent()
+        AlertDialog.Builder(this)
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton("OK") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
     }
 
     override fun onBackPressed() {
