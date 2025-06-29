@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mengeja1Fragment">
+
+    <fragment
+        android:id="@+id/mengeja1Fragment"
+        android:name="com.example.temanbelajar.Mengeja1Fragment"
+        android:label="fragment_mengeja1"
+        tools:layout="@layout/fragment_mengeja1">
+        <action
+            android:id="@+id/action_mengeja1Fragment_to_mengeja2Fragment"
+            app:destination="@id/mengeja2Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mengeja2Fragment"
+        android:name="com.example.temanbelajar.Mengeja2Fragment"
+        android:label="fragment_mengeja2"
+        tools:layout="@layout/fragment_mengeja2" />
+
+</navigation>
